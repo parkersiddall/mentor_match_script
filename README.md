@@ -5,9 +5,8 @@ The Buddy Match program was created to pair incoming college freshmen with upper
 ## Features
 
 Matching based on:
-
-    -Nationality
-    -Program/major
+    *Nationality
+    *Program/major
 
 Even distribution of freshmen to upperclassmen based on program/major.
 
