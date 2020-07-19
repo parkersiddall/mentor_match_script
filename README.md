@@ -5,12 +5,12 @@ The Buddy Match program was created to pair incoming college freshmen with upper
 ## Features
 
 Matching based on:
--Nationality
--Program/major
+    -Nationality
+    -Program/major
 
 Even distribution of freshmen to upperclassmen based on program/major.
--For each program/major, BuddyMatch will calculate the ideal freshmen-to-upperclassmen ratio.
--Regardless of program/major, no upperclassmen will be assigned more than 5 freshmen.
+    -For each program/major, BuddyMatch will calculate the ideal freshmen-to-upperclassmen ratio.
+    -Regardless of program/major, no upperclassmen will be assigned more than 5 freshmen.
 
 ## Usage
 
@@ -38,7 +38,7 @@ Even distribution of freshmen to upperclassmen based on program/major.
         ***File names must contain .csv at the end***
 
     -The program should then provide the following message:
-    '''bash
+    ```bash
     Program executed successfully.
     There are X applicants that were not matched.
     ```
