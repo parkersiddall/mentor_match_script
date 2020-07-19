@@ -28,8 +28,8 @@ Even distribution of freshmen to upperclassmen based on program/major.
 2. Run the program.
 
     -Buddy Match takes two command line arguments
-        1. The first is the CSV file of the **upperclassmen** (buddies).
-        2. The second is the CSV file of the **freshmen** (applicants).
+        -The first is the CSV file of the **upperclassmen** (buddies).
+        -The second is the CSV file of the **freshmen** (applicants).
         -*If the command line arguments are not CSV files you will receive an error message.*
         -Example:
         ```bash
@@ -43,7 +43,7 @@ Even distribution of freshmen to upperclassmen based on program/major.
     Program executed successfully.
     There are X applicants that were not matched.
     ```
-4. Review export files.
+3. Review export files.
 
     -The program will spit out two export files to the present working directory.
         -One file will provide the matching data with an upperclassmen on each row. You will be able to see all of the freshmen they were assigned.
