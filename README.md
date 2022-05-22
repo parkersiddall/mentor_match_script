@@ -1,48 +1,27 @@
-# BUDDY MATCH
+# MENTOR MATCH
+A script that matches mentees with a best fit mentor. The program was written for Bocconi University as we way to pair incoming freshman with upperclassmen, with the objective of increasing the student retention rate.
 
-The Buddy Match program was created to pair incoming college freshmen with upperclassmen based on shared similarities.
+```
+$ python mentor_match.py --help
+usage: mentor_match.py [-h] --mentors MENTORS --mentees MENTEES
 
-## Features
+Pairs mentees with a best fit mentor.
 
-Matching based on:
-- Nationality
-- Program/major
-- Interests
+optional arguments:
+  -h, --help         show this help message and exit
 
-Even distribution of freshmen to upperclassmen based on program/major.
-    - For each program/major, BuddyMatch will calculate the ideal freshmen-to-upperclassmen ratio.
-    - Regardless of program/major, no upperclassmen will be assigned more than 5 freshmen.
+required named arguments:
+  --mentors MENTORS  Filepath to the csv file with mentors to process.
+  --mentees MENTEES  Filepath to the csv file with mentees to process.
+```
 
-## Usage
+## Input
+Mentor and mentee data collected using a questionnaire (via Google Forms, Survey Monkey, etc.) then saved as a csv file and served as input to the script. The only mandatory fields for the csv are `NAME`, `SURNAME`, and `EMAIL`. The matching is based on any remaining fields in the file. 
 
-1. Prepare CSV files with student data.
-    - Two CSV files are needed; one containing student data for the freshman (applicants) and one for the upperclassmen (buddies).
-    - Each CSV file must contain 5 columns, the first row should contain the column titles which ***must*** be written as:
-        - Name
-        - Email
-        - Nationality
-        - Interests
-        - Program
-    - Data must be validated (e.g. U.S.A. and USA would be recognized as different nationalities.)
-    
-2. Run the program.
-    - Buddy Match takes two command line arguments
-        - The first is the CSV file of the **upperclassmen** (buddies).
-        - The second is the CSV file of the **freshmen** (applicants).
-        - *If the command line arguments are not CSV files you will receive an error message.*
-        - Example:
-        ```bash
-        $ python buddymatch.py upperclassmendata.csv freshmendata.csv
-        ```
-    - Provide export file names.
-        - After running the program you will be prompted to insert two file names for the export files.
-        ***File names must contain .csv at the end***
-    - The program should then provide the following message:
-    ```bash
-    Program executed successfully.
-    There are X applicants that were not matched.
-    ```
-3. Review export files.
-    - The program will spit out two export files to the present working directory.
-        - One file will provide the matching data with an upperclassmen on each row. You will be able to see all of the freshmen they were assigned.
-        -  The other file will provide the matching data with a freshman on each row.
+## Output
+The script will create two files:
+- `matches.csv` will have all matches along with their data (match rate, question responses)
+- `unmatched.csv` will have any mentees or mentors that did not receive a match
+
+## Testing
+If you care to give this a try, you can create some `.csv` files populated with random data by running `python ./tests/create_fixtures.py`. 

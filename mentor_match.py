@@ -23,15 +23,16 @@ class Match:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Pairs mentees with a best fit mentor."
+        description="Pairs mentees with a best fit mentor.",
     )
-    parser.add_argument(
+    required_args = parser.add_argument_group('required named arguments')
+    required_args.add_argument(
         "--mentors",
         type=str,
         help="Filepath to the csv file with mentors to process.",
         required=True,
     )
-    parser.add_argument(
+    required_args.add_argument(
         "--mentees",
         type=str,
         help="Filepath to the csv file with mentees to process.",
