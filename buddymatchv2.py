@@ -151,6 +151,11 @@ def write_matches_to_csv(matches: list) -> None:
         'mentee_email',
         'match_rate',
         ]
+    
+    questions = matches[0].mentor.responses.keys()
+    for question in questions:
+        fieldnames.append(f"mentor_{question}")
+        fieldnames.append(f"mentee_{question}")
 
     with open('matches.csv', "w", newline="") as file:
         writer = csv.DictWriter(file, fieldnames=fieldnames)
@@ -165,6 +170,10 @@ def write_matches_to_csv(matches: list) -> None:
                 'mentee_email': match.mentee.email,
                 'match_rate': f"{match.match_rate}%",
             }
+            for question in questions:
+                match_dict[f"mentor_{question}"]= match.mentor.responses[question]
+                match_dict[f"mentee_{question}"]= match.mentee.responses[question]
+
             writer.writerow(match_dict)
 
 
